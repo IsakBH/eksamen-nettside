@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grind Folkehøyskole</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1 style="text-align: center; color: #2e7d32;">🌲 Grind Folkehøyskole</h1>
+        <hr>
+
+        <div id="hjemSone">
+            <div class="hero">
+                <h2>Ditt viktigste år!</h2>
+                <p>Hos oss på Grind slipper du karakterer og eksamenspress. Her fokuserer vi på unikt fellesskap, opplevelser i naturen, kreativitet og personlig vekst. Bli med på et uforglemmelig år!</p>
+
+                <button class="btn-cta" onclick="visRegistrering()">Er du interessert? Registrer deg her! →</button>
+            </div>
+        </div>
+
+        <div id="authSone" class="hidden">
+            <div class="box">
+                <h2>Opprett en konto</h2>
+                <input type="text" id="regNavn" placeholder="Fullt navn"><br><br>
+                <input type="email" id="regEpost" placeholder="E-postadresse"><br><br>
+                <input type="password" id="regPassord" placeholder="Passord"><br><br>
+                <button class="btn-success" onclick="registrerBruker()">Opprett bruker</button>
+            </div>
+
+            <div class="box">
+                <h2>Allerede registrert? Logg inn</h2>
+                <input type="email" id="loginEpost" placeholder="E-postadresse"><br><br>
+                <input type="password" id="loginPassord" placeholder="Passord"><br><br>
+                <button onclick="loggInn()">Logg inn</button>
+            </div>
+
+            <button onclick="visHjemmeside()" style="background: none; color: #666; text-decoration: underline;">← Tilbake til forsiden</button>
+        </div>
+
+        <div id="dashboardSone" class="hidden">
+            <div class="box user-card">
+                <h2>Velkommen, <span id="velkomstNavn"></span>!</h2>
+                <p><strong>Din status:</strong> <span id="brukerStatus" class="status-badge"></span></p>
+                <button onclick="loggUt()" class="btn-danger-sm">Logg ut</button>
+            </div>
+
+            <div id="stegInteresse" class="box hidden">
+                <h3>Meld interesse</h3>
+                <p>Klikk under for å bekrefte at du er interessert i skoleplass.</p>
+                <button onclick="meldInteresse()">Jeg er interessert!</button>
+            </div>
+
+            <div id="stegSoknad" class="box hidden">
+                <h3>Søk opptak via den offentlige hjemmesiden</h3>
+                <p>Du har meldt interesse. Klikk under for å fullføre søknaden og motta e-postkvittering.</p>
+                <button onclick="sendSoknad()">Send inn søknad nå</button>
+            </div>
+
+            <div id="stegSvar" class="box hidden">
+                <h3>Tilbud om skoleplass!</h3>
+                <p>Du har fått opptak ved Grind! Vennligst svar på tilbudet:</p>
+                <button class="btn-success" onclick="svarTilbud('ja')">✓ Takk JA til plassen</button>
+                <button class="btn-danger" onclick="svarTilbud('nei')">✕ Takk NEI til plassen</button>
+            </div>
+
+            <div class="slette-sone">
+                <p style="font-size: 13px; color: #666;">Ønsker du å fjerne brukeren din?</p>
+                <button class="btn-delete" onclick="sletteBruker()">Slett min brukerprofil</button>
+            </div>
+        </div>
+
+        <div id="statusMelding" class="alert hidden"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
